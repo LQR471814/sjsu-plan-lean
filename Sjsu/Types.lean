@@ -1,3 +1,6 @@
+import Mathlib.Data.Finset.Basic
+import Mathlib.Data.Finset.Image
+
 -- logical predicate types:
 -- 1. courses (bool flag)
 -- 2. course areas (in a particular set)
@@ -13,22 +16,29 @@ inductive Institution where
   | community_college
   | non_cc_transfer
 
-inductive Division where
-  | upper
-  | lower
-
 structure Course where
   name : String
   units : Nat
+  deriving DecidableEq -- makes it so that two courses can be compared to be equal
 
-structure Year where
-  number : Nat
+structure Semester where
+  name : String
   unit_capacity : Nat
+  deriving DecidableEq
 
 structure CourseRegistration where
   course : Course
-  year : Year
+  sem : Semester
+  deriving DecidableEq
 
 structure Plan where
-  taken : List CourseRegistration
-  total_units : Nat
+  name : String
+  taken : Finset CourseRegistration
+  deriving DecidableEq
+
+def add (r : CourseRegistration) (p : Plan) : Plan :=
+  { p with taken := insert r p.taken }
+
+def get_course (r : CourseRegistration) := r.course
+def unwrap_reg_courses (sr : Finset CourseRegistration) : Finset Course :=
+  Finset.image get_course sr
