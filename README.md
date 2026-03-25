@@ -6,19 +6,17 @@ non-uniform structure.
 
 Due to the complexity of academic policy, there exists a
 meaningful gap between the academic plans policy allows for and
-the actual plans students will make.
-
-This is supposedly where academic advisors, experts on policy,
-come in, but advisors are frequently stretched thin during course
-registration times precisely due to the complexity of policy.
+the actual plans students will make. This is supposedly where
+academic advisors, experts on policy, come in, but advisors are
+frequently stretched thin during course registration times
+precisely due to the complexity of policy.
 
 As such, one may think of building an automated policy-based
 checking program to help the student build their academic plan and
-to catch errors before they happen.
-
-However, there is a reason why these programs are not more
-widespread, and that is largely due to the fact that academic
-policy contains many "edge-case" structures. See the following:
+to catch errors before they happen. However, there is a reason why
+these programs are not more widespread, and that is largely due to
+the fact that academic policy contains many "edge-case"
+structures. See the following:
 
 It may be tempting to model the pre-requisites and co-requisites
 of a course as simple sets of courses. However, then you may end
