@@ -111,7 +111,9 @@ def current_plan : Plan := {
 
 set_option maxRecDepth 10000
 
-theorem current_plan_works : gen_req_met current_plan ∧ cmpe_req_courses ⊆ course_regs current_plan.taken
+theorem current_plan_works :
+  gen_req_met current_plan
+  ∧ cmpe_req_courses ⊆ course_regs current_plan.taken
 := by
   -- (first | tac1 | tac2 | ...) tries tactics until one works
   repeat' (first | constructor | decide)

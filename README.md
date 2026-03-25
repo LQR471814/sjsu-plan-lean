@@ -56,3 +56,7 @@ particular, representing a particular academic plan as a structure
 which logical predicates can be checked against. This can be done
 with [Lean](https://lean-lang.org/).
 
+## WIP
+
+- Co-req/pre-req checks.
+

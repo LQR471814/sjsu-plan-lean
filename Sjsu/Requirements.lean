@@ -5,6 +5,7 @@ import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Sjsu.Types
 import Sjsu.Courses
 import Sjsu.Categories
+import Sjsu.Semesters
 
 def cat_units (cat : Set Course) (p : Plan) [DecidablePred (· ∈ cat)] :=
   let courses : Finset Course := course_regs p.taken
@@ -48,10 +49,17 @@ def gen_req_met (p : Plan) :=
   ) ∧
   cat_units Set.univ p ≥ 120 ∧
   cat_units wid p > 0 ∧
-  ({engl_1a} : Finset Course) ⊆ course_regs p.taken
-  -- first year is 17 units fixed
-
+  ({engl_1a} : Finset Course) ⊆ course_regs p.taken ∧
   -- assume good standing (gpa ≥ 2.0)
+  sem_units fall_2025 p ≤ 17 ∧
+  sem_units spring_2026 p ≤ 19 ∧
+  sem_units fall_2026 p ≤ 19 ∧
+  sem_units spring_2027 p ≤ 19 ∧
+  sem_units fall_2027 p ≤ 19 ∧
+  sem_units spring_2028 p ≤ 19 ∧
+  sem_units fall_2028 p ≤ 19 ∧
+  sem_units spring_2029 p ≤ 19 ∧
+  sem_units fall_2029 p ≤ 19
 
 def cmpe_req_courses : Finset Course := {
   biol_10,
