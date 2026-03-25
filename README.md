@@ -56,6 +56,11 @@ particular, representing a particular academic plan as a structure
 which logical predicates can be checked against. This can be done
 with [Lean](https://lean-lang.org/).
 
+> [!NOTE]
+> This project in particular is purely meant for personal use and
+> does not make any significant attempt to be SJSU or
+> campus-generic.
+
 ## WIP
 
 - Co-req/pre-req checks.
